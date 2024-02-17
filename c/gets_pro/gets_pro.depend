@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1706855043 source:z:\aibatch\project\c++\gets_pro\main.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+

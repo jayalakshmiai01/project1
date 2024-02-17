@@ -1,0 +1,67 @@
+# depslib dependency file v1.0
+1701758200 source:c:\users\user\desktop\aibatch\cdemo\aibatch\main.c
+	<stdio.h>
+
+1701242831 source:c:\users\user\desktop\aibatch\cdemo\aibatch\sub.c
+	<stdio.h>
+
+1701242583 source:c:\users\user\desktop\aibatch\cdemo\aibatch\addition.c
+	<stdio.h>
+
+1701243433 source:c:\users\user\desktop\aibatch\cdemo\aibatch\multi[ply.c
+	<stdio.h>
+
+1701243731 source:c:\users\user\desktop\aibatch\cdemo\aibatch\divition.c
+	<stdio.h>
+
+1701243833 source:c:\users\user\desktop\aibatch\cdemo\aibatch\modulas.c
+	<stdio.h>
+
+1701244609 source:c:\users\user\desktop\aibatch\cdemo\aibatch\icrement.c
+	<stdio.h>
+
+1701244883 source:c:\users\user\desktop\aibatch\cdemo\aibatch\decrement.c
+	<stdio.h>
+
+1701326978 source:c:\users\user\desktop\aibatch\cdemo\aibatch\greterthan.c
+
+1701411900 c:\users\user\desktop\aibatch\cdemo\aibatch\assaingment.c
+
+1701415284 source:c:\users\user\desktop\aibatch\cdemo\aibatch\relational.c
+	<stdio.h>
+
+1701500407 source:c:\users\user\desktop\aibatch\cdemo\aibatch\assaign.c
+	<stdio.h>
+
+1701417046 source:c:\users\user\desktop\aibatch\cdemo\aibatch\forloop.c
+	<stdio.h>
+
+1701498837 source:c:\users\user\desktop\aibatch\cdemo\aibatch\dowhile.c
+	<stdio.h>
+
+1701498489 source:c:\users\user\desktop\aibatch\cdemo\aibatch\switch.c
+	<stdio.h>
+
+1701498690 source:c:\users\user\desktop\aibatch\cdemo\aibatch\while.c
+	<stdio.h>
+
+1701499863 source:c:\users\user\desktop\aibatch\cdemo\aibatch\elseif.c
+	<stdio.h>
+
+1701499823 source:c:\users\user\desktop\aibatch\cdemo\aibatch\if.c
+	<stdio.h>
+
+1701667935 source:c:\users\user\desktop\aibatch\cdemo\aibatch\nested if.c
+	<stdio.h>
+
+1701677242 source:c:\users\user\desktop\aibatch\cdemo\aibatch\forloop2.c
+	<stdio.h>
+
+1701757628 source:c:\users\user\desktop\aibatch\cdemo\aibatch\getfun.c
+	<stdio.h>
+
+1701755249 source:c:\users\user\desktop\aibatch\cdemo\aibatch\nestedloop.c
+	<stdio.h>
+
+1701755737 source:c:\users\user\desktop\aibatch\cdemo\aibatch\struct.c
+

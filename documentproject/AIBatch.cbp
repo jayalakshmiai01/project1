@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="AIBatch" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/AIBatch" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/AIBatch" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="addition.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="assaign.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="decrement.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="divition.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="dowhile.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="elseif.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="forloop.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="forloop2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="getfun.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="greterthan.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="icrement.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="if.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modulas.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="multi[ply.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="nested if.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="nestedloop.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="relational.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="struct.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="sub.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="switch.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="while.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
