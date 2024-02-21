@@ -1,19 +1,9 @@
 from tkinter import *
+import mysql.connector
 doc=Tk()
 doc.title("operations")
 doc.geometry("500x500+500+100")
 doc.state("zoomed")
-
-def insert():
-    pass
-def update():
-    pass
-def delete():
-    pass
-def reset():
-    pass
-def submit():
-    pass
 
 
 producttiltle=Label(doc,text="STUDENT_MARKS",fg="blue")

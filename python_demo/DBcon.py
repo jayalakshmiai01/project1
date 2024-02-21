@@ -1,13 +1,27 @@
 from tkinter import *
+import mysql.connector
 std=Tk()
 std.title("STUDENT_MARKS")
 std.geometry("500x500+500+100")
 std.state("zoomed")
 
+
+def MyDBConnection():
+    dbcon=mysql.connector.connect(
+    host="192.168.1.240",
+    user="AIBATCH01",
+    password="AI@123",
+    database="ai_jayalakshmi"
+    )
+
+    return dbcon
+
+
 def insert():
     pass
+
 def update():
-    pass
+  pass
 def delete():
     pass
 def reset():
@@ -42,7 +56,7 @@ Total=StringVar
 Tamilentry=Entry(std,textvariable=Tamil)
 Englishentry=Entry(std,textvariable=English)
 Mathsentry=Entry(std,textvariable=Maths)
-scienceentry=Entry(std,textvariable=Science)
+Scienceentry=Entry(std,textvariable=Science)
 Socialentry=Entry(std,textvariable=Social)
 Totalentry=Entry(std,textvariable=Total)
 
@@ -50,7 +64,7 @@ Totalentry=Entry(std,textvariable=Total)
 Tamilentry.grid(row=1,column=5)
 Englishentry.grid(row=2,column=5)
 Mathsentry.grid(row=3,column=5)
-scienceentry.grid(row=4,column=5)
+Scienceentry.grid(row=4,column=5)
 Socialentry.grid(row=5,column=5)
 Totalentry.grid(row=6,column=5)
 
