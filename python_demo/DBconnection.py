@@ -6,6 +6,17 @@ doc.geometry("500x500+500+100")
 doc.state("zoomed")
 
 
+def insert():
+    pass
+def update():
+    pass
+def delete():
+    pass
+def reset():
+    pass
+def submit():
+    pass
+
 producttiltle=Label(doc,text="STUDENT_MARKS",fg="blue")
 producttiltle.grid(row=0,column=20,padx=200,pady=30)
 
