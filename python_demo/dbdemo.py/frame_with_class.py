@@ -1,25 +1,3 @@
-# from tkinter import *
-# import mysql.connector
-
-# win=Tk()
-
-# win.title("MySQL DB Demo")
-# win.geometry("300x300")
-
-# class manipulationWindow:
-#     def __init__(self):
-#         frametop=Frame(win, bg="black",width=800, height=300, padx=10,pady=10)
-#         frametop.pack(side = TOP)
-#         btninsert=Button(frametop,text="INSERT" ).pack(padx=10, pady=10)
-#         btnupdate=Button(frametop,text="UPDATE" ).pack(padx=10, pady=10)
-#         btndelete=Button(frametop,text="DELETE").pack(padx=10, pady=10)
-    
-    
-# run=manipulationWindow()
-# win.mainloop()
-
-
-
 
 from tkinter import *
 import mysql.connector
@@ -35,7 +13,7 @@ class frame_with_class:
         frametop.pack(side = TOP)
         btninsert=Button(frametop,text="INSERT", command=self.frameLeft).pack(padx=10, pady=10)
         btnupdate=Button(frametop,text="UPDATE",command=self.frameright).pack(padx=10, pady=10)
-        btndelete=Button(frametop,text="DELETE").pack(padx=10, pady=10)
+        # btndelete=Button(frametop,text="DELETE").pack(padx=10, pady=10)
 
         
     def frameLeft(self):
@@ -73,7 +51,6 @@ class frame_with_class:
         name=Entry(frameleft,width=20,font=20)
         name.grid(row=2,column=2)
         tamil=Entry(frameleft,width=20,font=20)
-
         tamil.grid(row=3,column=2)
         english=Entry(frameleft,width=20,font=20)
         english.grid(row=4,column=2)
@@ -85,50 +62,127 @@ class frame_with_class:
         social.grid(row=7,column=2)
 
 
-def frameright(self):
+    def frameright(self):
            
         
-        obj=Tk()
-        obj.title("update into MySQL DB Demo")
-        obj.geometry("500x500")   
+        doc=Tk()
+        doc.title("update into MySQL DB Demo")
+        doc.geometry("500x500")   
         
-        frameleft=Frame(obj, bg="white",width=500, height=500, padx=30,pady=30)
+        frameleft=Frame(doc, bg="white",width=500, height=500, padx=30,pady=30)
         frameleft.pack(side = LEFT)
 
 
         # frameright=Frame(win, bg="red",width=500, height=500)
         # frameright.pack(side = RIGHT)
 
-        lbl_Title_of_Operation=Label(frameright, text="Insert into MySQL DB Demo")
+        lbl_Title_of_Operation=Label(frameright, text="update into MySQL DB Demo")
         lbl_Title_of_Operation.grid(row=0,columnspan=5)
 
         lblName=Label(frameright,text="Name")
         lblName.grid(row=2,column=1,padx=30,pady=10)
         lblTamil=Label(frameright,text="Tamil")
         lblTamil.grid(row=3,column=1,padx=30,pady=10)
-        lblTamil1=Label(frameright,text="English")
-        lblTamil1.grid(row=4,column=1,padx=30,pady=10)
-        lblTamil1=Label(frameright,text="Maths")
-        lblTamil1.grid(row=5,column=1,padx=30,pady=10)
-        lblTamil1=Label(frameright,text="Science")
-        lblTamil1.grid(row=6,column=1,padx=30,pady=10)
-        lblTamil1=Label(frameright,text="Social")
-        lblTamil1.grid(row=7,column=1,padx=30,pady=10)
-        lblTamil1=Label(frameright,text="Submit")
-        lblTamil1.grid(row=8,column=4,padx=30,pady=10)
 
-        name=Entry(frameright,width=22,font=20)
+        name=Entry(frameright,width=20,font=20)
         name.grid(row=2,column=2)
-        tamil=Entry(frameright,width=22,font=20)
+        tamil=Entry(frameright,width=20,font=20)
         tamil.grid(row=3,column=2)
-        english=Entry(frameright,width=20,font=20)
-        english.grid(row=4,column=2)
-        maths=Entry(frameright,width=20,font=20)
-        maths.grid(row=5,column=2)
-        science=Entry(frameright,width=20,font=20)
-        science.grid(row=6,column=2)
-        social=Entry(frameright,width=20,font=20)
-        social.grid(row=7,column=2)
+
+
+
+        # def frameLeft(self):
+           
+        
+        # neww=Tk()
+        # neww.title("Insert into MySQL DB Demo")
+        # neww.geometry("500x500")   
+        
+        # frameleft=Frame(neww, bg="white",width=500, height=500, padx=30,pady=30)
+        # frameleft.pack(side = LEFT)
+
+
+        # # frameright=Frame(win, bg="red",width=500, height=500)
+        # # frameright.pack(side = RIGHT)
+
+        # lbl_Title_of_Operation=Label(frameleft, text="Insert into MySQL DB Demo")
+        # lbl_Title_of_Operation.grid(row=0,columnspan=5)
+
+        # lblName=Label(frameleft,text="Name")
+        # lblName.grid(row=2,column=1,padx=30,pady=10)
+        # lblTamil=Label(frameleft,text="Tamil")
+        # lblTamil.grid(row=3,column=1,padx=30,pady=10)
+        # lblTamil1=Label(frameleft,text="English")
+        # lblTamil1.grid(row=4,column=1,padx=30,pady=10)
+        # lblTamil1=Label(frameleft,text="Maths")
+        # lblTamil1.grid(row=5,column=1,padx=30,pady=10)
+        # lblTamil1=Label(frameleft,text="Science")
+        # lblTamil1.grid(row=6,column=1,padx=30,pady=10)
+        # lblTamil1=Label(frameleft,text="Social")
+        # lblTamil1.grid(row=7,column=1,padx=30,pady=10)
+        # lblTamil1=Label(frameleft,text="Submit")
+        # lblTamil1.grid(row=8,column=4,padx=30,pady=10)
+
+        # name=Entry(frameleft,width=20,font=20)
+        # name.grid(row=2,column=2)
+        # tamil=Entry(frameleft,width=20,font=20)
+
+        # tamil.grid(row=3,column=2)
+        # english=Entry(frameleft,width=20,font=20)
+        # english.grid(row=4,column=2)
+        # maths=Entry(frameleft,width=20,font=20)
+        # maths.grid(row=5,column=2)
+        # science=Entry(frameleft,width=20,font=20)
+        # science.grid(row=6,column=2)
+        # social=Entry(frameleft,width=20,font=20)
+        # social.grid(row=7,column=2)
+
+
+
+# def frameright(self):
+           
+        
+#         obj=Tk()
+#         obj.title("update into MySQL DB Demo")
+#         obj.geometry("500x500")   
+        
+#         frameleft=Frame(obj, bg="white",width=500, height=500, padx=30,pady=30)
+#         frameleft.pack(side = LEFT)
+
+
+#         # frameright=Frame(win, bg="red",width=500, height=500)
+#         # frameright.pack(side = RIGHT)
+
+#         lbl_Title_of_Operation=Label(frameright, text="Insert into MySQL DB Demo")
+#         lbl_Title_of_Operation.grid(row=0,columnspan=5)
+
+#         lblName=Label(frameright,text="Name")
+#         lblName.grid(row=2,column=1,padx=30,pady=10)
+#         lblTamil=Label(frameright,text="Tamil")
+#         lblTamil.grid(row=3,column=1,padx=30,pady=10)
+#         lblTamil1=Label(frameright,text="English")
+#         lblTamil1.grid(row=4,column=1,padx=30,pady=10)
+#         lblTamil1=Label(frameright,text="Maths")
+#         lblTamil1.grid(row=5,column=1,padx=30,pady=10)
+#         lblTamil1=Label(frameright,text="Science")
+#         lblTamil1.grid(row=6,column=1,padx=30,pady=10)
+#         lblTamil1=Label(frameright,text="Social")
+#         lblTamil1.grid(row=7,column=1,padx=30,pady=10)
+#         lblTamil1=Label(frameright,text="Submit")
+#         lblTamil1.grid(row=8,column=4,padx=30,pady=10)
+
+#         name=Entry(frameright,width=22,font=20)
+#         name.grid(row=2,column=2)
+#         tamil=Entry(frameright,width=22,font=20)
+#         tamil.grid(row=3,column=2)
+#         english=Entry(frameright,width=20,font=20)
+#         english.grid(row=4,column=2)
+#         maths=Entry(frameright,width=20,font=20)
+#         maths.grid(row=5,column=2)
+#         science=Entry(frameright,width=20,font=20)
+#         science.grid(row=6,column=2)
+#         social=Entry(frameright,width=20,font=20)
+#         social.grid(row=7,column=2)
 
 
 
@@ -211,7 +265,6 @@ def frameright(self):
         
 
 run=frame_with_class()
-# run.rightFrame()
 win.mainloop()
 
 
