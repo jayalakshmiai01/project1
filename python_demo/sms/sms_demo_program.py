@@ -2,6 +2,7 @@ import os
 from tkinter import *
 from tkinter import ttk
 from db.dbfile import DBManipulate
+import mysql.connector
 #from db.mydbfile import DBManipulate as kk
 #import tkinter as tk
 
@@ -13,8 +14,17 @@ root_window.geometry("500x500")
 #root_window.state("zoomed")
 #root_window.wm_iconbitmap('sms.ico')
 
+
+
+
+
 imgdir=os.path.join((os.path.join(os.path.dirname(__file__),'img')),"image.gif")
 getTitleImage=PhotoImage('titleimage',file=imgdir)
+
+# imageicolocation=os.path.join(imgdir,'sms.ico')
+# root_window.wm_iconbitmap(imageicolocation)
+
+
 
 titleImageFrame=Frame(root_window, bg="white")#, height=200)
 titleImageFrame.pack(padx=10,fill="both")
@@ -197,8 +207,8 @@ btn_Exit=Button(titledisplayframeintab, text="Quit", command=quit)
 btn_Exit.grid(row=7,column=3)
 
 msg=mydbcon.returnMsg()
-# lblConMsg=Label(titledisplayframeintab, text=msg)
-# lblConMsg.grid(row=8,column=2, pady=20)
+lblConMsg=Label(titledisplayframeintab, text=msg)
+lblConMsg.grid(row=8,column=2, pady=20)
 
 
 root_window.mainloop()

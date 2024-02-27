@@ -193,7 +193,7 @@ btn_Insert.grid(row=7,column=1)
 btn_Clear=Button(titledisplayframeintab, text="Clear")
 btn_Clear.grid(row=7,column=2)
 
-btn_Exit=Button(titledisplayframeintab, text="Quit", command=exitParent)
+btn_Exit=Button(titledisplayframeintab, text="Quit", command=quit)
 btn_Exit.grid(row=7,column=3)
 
 # msg=mydbcon.returnMsg()

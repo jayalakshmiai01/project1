@@ -1,6 +1,6 @@
 a="car"
 def function():
-    printf("she has a" +a)
+    print("she has a" +a)
     function()
 
 
