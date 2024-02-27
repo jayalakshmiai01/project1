@@ -1,7 +1,7 @@
-# import os
+import os
 from tkinter import *
 from tkinter import ttk
-#from db.mydbfile import DBManipulate
+from db.dbfile import DBManipulate
 #from db.mydbfile import DBManipulate as kk
 #import tkinter as tk
 
@@ -11,38 +11,59 @@ root_window=Tk()
 root_window.title("Student Management System")
 root_window.geometry("500x500")
 #root_window.state("zoomed")
-# root_window.wm_iconbitmap('sms.ico')
+#root_window.wm_iconbitmap('sms.ico')
+
+imgdir=os.path.join((os.path.join(os.path.dirname(__file__),'img')),"image.gif")
+getTitleImage=PhotoImage('titleimage',file=imgdir)
+
+titleImageFrame=Frame(root_window, bg="white")#, height=200)
+titleImageFrame.pack(padx=10,fill="both")
+
+lblDisplayTitleImage=Label(titleImageFrame,image=getTitleImage).pack()
 
 #mydbcon=kk()
-# mydbcon=DBManipulate()
-                                                                    #  menubar
+mydbcon=DBManipulate()
+
+
 def quit():
     root_window.destroy
 
 def New():
-    nw=root_window.Tk()
+    nw=Tk()
     nw.geometry("500x500")
     nw.title("New File")
     
     nw.mainloop()
     
 def about_notpad():
-    abt=root_window.Tk()
+    abt=Tk()
     abt.geometry("500x500")
     abt.title("About Us")
     message="""Windows Notepad is a simple text editor for Windows;
                it creates and edits plain text documents.
                First released in 1983 to commercialize the computer mouse in MS-DOS, 
                Notepad has been part of every version of Windows ever since. """
-    intinfo=root_window.Label(abt,text=message)
+    intinfo=Label(abt,text=message)
     intinfo.pack()
     abt.mainloop()
 
 
-menubar=root_window.Menu(win)                                 #common for all menu..create menubar(menu=syntax),win=obj
-filemenu=root_window.Menu(menubar,tearoff=0)                  #create for filemenu
-menubar.add_cascade(label="File",underline=0,menu=filemenu)        #create file based on menubar
-filemenu.add_command(label="New",underline=0,accelerator="Ctrl+N",command=New)                   #create submenus based on filemenu
+menubar=Menu(root_window)
+
+submenu=Menu(menubar,tearoff=0) 
+
+
+# submenu.add_command(label="Zoom In",underline=0,accelerator="ctrl+plus")
+# submenu.add_command(label="Zoom Out",underline=0,accelerator="ctrl+minus")
+# submenu.add_command(label="Restore Default Zoom",underline=0,accelerator="ctrl+0")
+
+
+
+
+                               
+filemenu=Menu(menubar,tearoff=0)                  
+menubar.add_cascade(label="File",underline=0,menu=filemenu)       
+filemenu.add_command(label="New",underline=0,accelerator="Ctrl+N",command=New)             
 filemenu.add_command(label="New Window",underline=0,accelerator="Ctrl+Shift+N")
 filemenu.add_command(label="Open",underline=0,accelerator="Ctrl+O")
 filemenu.add_command(label="Save",underline=0,accelerator="Ctrl+S")
@@ -54,9 +75,9 @@ filemenu.add_separator()
 filemenu.add_command(label="Exit",underline=0,command=quit)
 
 
-editmenu=root_window.Menu(menubar,tearoff=0)                  #create for filemenu
-menubar.add_cascade(label="Edit",underline=0,menu=editmenu)        #create file based on menubar
-editmenu.add_command(label="Undo",underline=0,accelerator="Ctrl+Z")  #create submenus based on filemenu
+editmenu=Menu(menubar,tearoff=0)                  
+menubar.add_cascade(label="Edit",underline=0,menu=editmenu)        
+editmenu.add_command(label="Undo",underline=0,accelerator="Ctrl+Z")  
 editmenu.add_separator()                                 
 editmenu.add_command(label="Cut",underline=0,accelerator="Ctrl+X")
 editmenu.add_command(label="Copy",underline=0,accelerator="Ctrl+C")
@@ -74,17 +95,23 @@ editmenu.add_command(label="Select All",underline=0,accelerator="Ctrl+G")
 editmenu.add_command(label="Time/Date",underline=0,accelerator="F5")
 
 
-formatmenu=root_window.Menu(menubar,tearoff=0)                  
+formatmenu=Menu(menubar,tearoff=0)                  
 menubar.add_cascade(label="Format",underline=0,menu=formatmenu)
 formatmenu.add_command(label="Word Wrap",underline=0)
 formatmenu.add_command(label="Font",underline=0)
 
-viewmenu=root_window.Menu(menubar,tearoff=0)                
+viewmenu=Menu(menubar,tearoff=0)                
 menubar.add_cascade(label="View",underline=0,menu=viewmenu)
-viewmenu.add_command(label="Zoom",underline=0)
+viewmenu.add_cascade(label="Zoom",underline=0,menu=submenu)
 viewmenu.add_command(label="Status",underline=0)
+# viewmenu.add_checkbutton(label="Show Done", onvalue=1, offvalue=0)
+#view submenu
+submenu.add_command(label="Zoom In",underline=0,accelerator="ctrl+plus")
+submenu.add_command(label="Zoom Out",underline=0,accelerator="ctrl+minus")
+submenu.add_command(label="Restore Default Zoom",underline=0,accelerator="ctrl+0")
 
-helpmenu=root_window.Menu(menubar,tearoff=0)                
+
+helpmenu=Menu(menubar,tearoff=0)                
 menubar.add_cascade(label="Help",underline=0,menu=helpmenu)
 helpmenu.add_command(label="View Help",underline=0)
 helpmenu.add_command(label="Send Feedback",underline=0)
@@ -102,33 +129,6 @@ root_window.config(menu=menubar)
 
 
 
-
-
-# def exitParent():
-#     root_window.destroy()
-
-
-
-# #initializing Main menu
-# menulist=Menu(root_window)
-
-# #initializing submenu
-# submenulist=Menu(menulist, tearoff=0)
-
-# #creating submenus list
-# submenulist.add_command(label="New File", underline=0, accelerator="Ctrl+N")
-# submenulist.add_command(label="New Project",  underline=7, accelerator="Ctrl+Shift+j")
-# submenulist.add_command(label="New Py File", underline=5, accelerator="Ctrl+N")
-
-
-# #list of main menu
-# filemenu=Menu(menulist, tearoff=0)
-# menulist.add_cascade(label="File", menu=filemenu)
-# filemenu.add_cascade(label="New", menu=submenulist)
-# filemenu.add_command(label="Exit", underline=1, accelerator="Ctrl+Q", command=exitParent)
-
-# #Attach menu to the parent root window
-# root_window.config(menu=menulist)
 
 tablist=ttk.Notebook(root_window)
 tablist.pack(padx=10, pady=5)
@@ -193,16 +193,12 @@ btn_Insert.grid(row=7,column=1)
 btn_Clear=Button(titledisplayframeintab, text="Clear")
 btn_Clear.grid(row=7,column=2)
 
-btn_Exit=Button(titledisplayframeintab, text="Quit", command=exitParent)
+btn_Exit=Button(titledisplayframeintab, text="Quit", command=quit)
 btn_Exit.grid(row=7,column=3)
 
-# msg=mydbcon.returnMsg()
+msg=mydbcon.returnMsg()
 # lblConMsg=Label(titledisplayframeintab, text=msg)
 # lblConMsg.grid(row=8,column=2, pady=20)
 
 
-
-
-
 root_window.mainloop()
-
