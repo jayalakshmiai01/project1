@@ -58,6 +58,19 @@ def about_notpad():
     abt.mainloop()
 
 
+def insertfun():
+    
+    Name=str(name.get())
+    Tamil_mrk=str(tamil.get())
+    English=str(english.get())
+    Maths=str(maths.get())
+    Science=str(science.get())
+    Social=str(social.get())
+                                                                                                   
+    x=mydbcon.insertvalues(name,tamil,english,maths,science,social)
+    lblConMsg.config(text=x)
+    
+
 menubar=Menu(root_window)
 
 submenu=Menu(menubar,tearoff=0) 
@@ -165,37 +178,37 @@ lbl_insertTitle.grid(pady=10,row=0, columnspan=10)
 
 lbl_StdName=Label(titledisplayframeintab,text="Name of the student ")
 lbl_StdName.grid(pady=10,row=1,column=1)
-Ety_StdName=Entry(titledisplayframeintab)
-Ety_StdName.grid(padx=10,pady=10,row=1, column=2)
+name=Entry(titledisplayframeintab)
+name.grid(padx=10,pady=10,row=1, column=2)
 
 
 
 lbl_StdMkTamil=Label(titledisplayframeintab,text="Tamil")
 lbl_StdMkTamil.grid(pady=10,row=2,column=1)
-Ety_StdMkTamil=Entry(titledisplayframeintab)
-Ety_StdMkTamil.grid(padx=10,pady=10,row=2, column=2)
+tamil=Entry(titledisplayframeintab)
+tamil.grid(padx=10,pady=10,row=2, column=2)
 
 
 lbl_StdMkEng=Label(titledisplayframeintab,text="Eng")
 lbl_StdMkEng.grid(pady=10,row=3,column=1)
-Ety_StdMkEng=Entry(titledisplayframeintab)
-Ety_StdMkEng.grid(padx=10,pady=10,row=3, column=2)
+english=Entry(titledisplayframeintab)
+english.grid(padx=10,pady=10,row=3, column=2)
 
 lbl_StdMkMath=Label(titledisplayframeintab,text="Math")
 lbl_StdMkMath.grid(pady=10,row=4,column=1)
-Ety_StdMkMath=Entry(titledisplayframeintab)
-Ety_StdMkMath.grid(padx=10,pady=10,row=4, column=2)
+maths=Entry(titledisplayframeintab)
+maths.grid(padx=10,pady=10,row=4, column=2)
 
 lbl_StdMkSci=Label(titledisplayframeintab,text="Sci")
 lbl_StdMkSci.grid(pady=10,row=5,column=1)
-Ety_StdMkSci=Entry(titledisplayframeintab)
-Ety_StdMkSci.grid(padx=10,pady=10,row=5, column=2)
+science=Entry(titledisplayframeintab)
+science.grid(padx=10,pady=10,row=5, column=2)
 
 
 lbl_StdMkSS=Label(titledisplayframeintab,text="SS")
 lbl_StdMkSS.grid(pady=10,row=6,column=1)
-Ety_StdMkSS=Entry(titledisplayframeintab)
-Ety_StdMkSS.grid(padx=10,pady=10,row=6, column=2)
+social=Entry(titledisplayframeintab)
+social.grid(padx=10,pady=10,row=6, column=2)
 
 btn_Insert=Button(titledisplayframeintab, text="Insert")
 btn_Insert.grid(row=7,column=1)
