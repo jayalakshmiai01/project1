@@ -58,17 +58,24 @@ def about_notpad():
     abt.mainloop()
 
 
-def insertfun():
+def insert():
     
-    Name=str(name.get())
-    Tamil_mrk=str(tamil.get())
-    English=str(english.get())
-    Maths=str(maths.get())
-    Science=str(science.get())
-    Social=str(social.get())
+    name=str(name.get())
+    tamil=str(tamil.get())
+    english=str(english.get())
+    maths=str(maths.get())
+    science=str(science.get())
+    social=str(social.get())
                                                                                                    
     x=mydbcon.insertvalues(name,tamil,english,maths,science,social)
     lblConMsg.config(text=x)
+
+    # def update():
+    # name=str(name.get())
+    # Tamil_mark=str(markTamil.get()) 
+    
+    # y=dbcon.updatevalues(Name2,Tamil_mark)
+    # lblConMsg.config(text=y)  
     
 
 menubar=Menu(root_window)
