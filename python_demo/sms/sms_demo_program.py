@@ -2,6 +2,7 @@ import os
 from tkinter import *
 from tkinter import ttk
 from db.dbfile import DBManipulate
+import mysql.connector
 #from db.mydbfile import DBManipulate as kk
 #import tkinter as tk
 
@@ -11,11 +12,19 @@ root_window=Tk()
 root_window.title("Student Management System")
 root_window.geometry("500x500")
 #root_window.state("zoomed")
-imgdir1=os.path.join(os.path.dirname(__file__),'img')
-root_window.wm_iconbitmap('sms.ico')
+#root_window.wm_iconbitmap('sms.ico')
+
+
+
+
 
 imgdir=os.path.join((os.path.join(os.path.dirname(__file__),'img')),"image.gif")
 getTitleImage=PhotoImage('titleimage',file=imgdir)
+
+# imageicolocation=os.path.join(imgdir,'sms.ico')
+# root_window.wm_iconbitmap(imageicolocation)
+
+
 
 titleImageFrame=Frame(root_window, bg="white")#, height=200)
 titleImageFrame.pack(padx=10,fill="both")
@@ -48,6 +57,26 @@ def about_notpad():
     intinfo.pack()
     abt.mainloop()
 
+
+def insert_method():
+    
+    name12=str(name1.get())
+    tamil1=str(tamil.get())
+    english1=str(english.get())
+    maths1=str(maths.get())
+    science1=str(science.get())
+    social1=str(social.get())
+                                                                                                   
+    x=mydbcon.insertvalues(name12,tamil1,english1,maths1,science1,social1)
+    lblConMsg.config(text=x)
+
+    # def update():
+    # name=str(name.get())
+    # Tamil_mark=str(markTamil.get()) 
+    
+    # y=dbcon.updatevalues(Name2,Tamil_mark)
+    # lblConMsg.config(text=y)  
+    
 
 menubar=Menu(root_window)
 
@@ -156,39 +185,39 @@ lbl_insertTitle.grid(pady=10,row=0, columnspan=10)
 
 lbl_StdName=Label(titledisplayframeintab,text="Name of the student ")
 lbl_StdName.grid(pady=10,row=1,column=1)
-Ety_StdName=Entry(titledisplayframeintab)
-Ety_StdName.grid(padx=10,pady=10,row=1, column=2)
+name1=Entry(titledisplayframeintab)
+name1.grid(padx=10,pady=10,row=1, column=2)
 
 
 
 lbl_StdMkTamil=Label(titledisplayframeintab,text="Tamil")
 lbl_StdMkTamil.grid(pady=10,row=2,column=1)
-Ety_StdMkTamil=Entry(titledisplayframeintab)
-Ety_StdMkTamil.grid(padx=10,pady=10,row=2, column=2)
+tamil=Entry(titledisplayframeintab)
+tamil.grid(padx=10,pady=10,row=2, column=2)
 
 
 lbl_StdMkEng=Label(titledisplayframeintab,text="Eng")
 lbl_StdMkEng.grid(pady=10,row=3,column=1)
-Ety_StdMkEng=Entry(titledisplayframeintab)
-Ety_StdMkEng.grid(padx=10,pady=10,row=3, column=2)
+english=Entry(titledisplayframeintab)
+english.grid(padx=10,pady=10,row=3, column=2)
 
 lbl_StdMkMath=Label(titledisplayframeintab,text="Math")
 lbl_StdMkMath.grid(pady=10,row=4,column=1)
-Ety_StdMkMath=Entry(titledisplayframeintab)
-Ety_StdMkMath.grid(padx=10,pady=10,row=4, column=2)
+maths=Entry(titledisplayframeintab)
+maths.grid(padx=10,pady=10,row=4, column=2)
 
 lbl_StdMkSci=Label(titledisplayframeintab,text="Sci")
 lbl_StdMkSci.grid(pady=10,row=5,column=1)
-Ety_StdMkSci=Entry(titledisplayframeintab)
-Ety_StdMkSci.grid(padx=10,pady=10,row=5, column=2)
+science=Entry(titledisplayframeintab)
+science.grid(padx=10,pady=10,row=5, column=2)
 
 
 lbl_StdMkSS=Label(titledisplayframeintab,text="SS")
 lbl_StdMkSS.grid(pady=10,row=6,column=1)
-Ety_StdMkSS=Entry(titledisplayframeintab)
-Ety_StdMkSS.grid(padx=10,pady=10,row=6, column=2)
+social=Entry(titledisplayframeintab)
+social.grid(padx=10,pady=10,row=6, column=2)
 
-btn_Insert=Button(titledisplayframeintab, text="Insert")
+btn_Insert=Button(titledisplayframeintab, text="Insert",command=insert_method)
 btn_Insert.grid(row=7,column=1)
 
 btn_Clear=Button(titledisplayframeintab, text="Clear")
@@ -197,9 +226,9 @@ btn_Clear.grid(row=7,column=2)
 btn_Exit=Button(titledisplayframeintab, text="Quit", command=quit)
 btn_Exit.grid(row=7,column=3)
 
-msg=mydbcon.returnMsg()
-# lblConMsg=Label(titledisplayframeintab, text=msg)
-# lblConMsg.grid(row=8,column=2, pady=20)
+msg=mydbcon.mydbconnection()
+lblConMsg=Label(titledisplayframeintab, text=msg)
+lblConMsg.grid(row=8,column=2, pady=20)
 
 
 root_window.mainloop()
